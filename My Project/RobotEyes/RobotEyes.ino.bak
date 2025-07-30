@@ -1,0 +1,71 @@
+#include "Emakefun_MotorDriver.h"
+Emakefun_MotorDriver mMotorDriver = Emakefun_MotorDriver();
+
+Emakefun_Servo *mServo1 = mMotorDriver.getServo(4);
+
+
+Emakefun_Servo *mServo5 = mMotorDriver.getServo(5);
+Emakefun_Servo *mServo6 = mMotorDriver.getServo(6);
+
+
+
+void setup()
+{
+  Serial.begin(9600);
+  mMotorDriver.begin(50);
+
+  mServo1->writeServo(60);
+
+  mServo5->writeServo(90);
+  mServo6->writeServo(90);
+  //Serial.println("5:90; 6:90 \n");
+  delay(500);
+
+
+}
+
+void loop()
+{
+  mServo5->writeServo(45);
+  mServo6->writeServo(90);
+  Serial.println("5:90; 6:90 \n");
+  delay(1000);
+
+  #if 0
+  mServo5->writeServo(90);
+  mServo6->writeServo(90);
+  Serial.println("5:180; 6:90 \n");
+  delay(1000);
+
+  mServo5->writeServo(135);
+  mServo6->writeServo(90);
+  Serial.println("5:0; 6:180 \n");
+  delay(1000);
+  
+  mServo5->writeServo(90);
+  mServo6->writeServo(90);
+  Serial.println("5:0; 6:180 \n");
+  delay(1000);
+
+  mServo5->writeServo(90);
+  mServo6->writeServo(125);
+  Serial.println("5:180; 6:90 \n");
+  delay(1000);
+
+  mServo5->writeServo(90);
+  mServo6->writeServo(90);
+  Serial.println("5:0; 6:180 \n");
+  delay(1000);
+  
+  mServo5->writeServo(90);
+  mServo6->writeServo(75);
+  Serial.println("5:0; 6:180 \n");
+  delay(1000);
+
+  mServo5->writeServo(90);
+  mServo6->writeServo(90);
+  Serial.println("5:0; 6:180 \n");
+  delay(1000);
+
+  #endif
+}
