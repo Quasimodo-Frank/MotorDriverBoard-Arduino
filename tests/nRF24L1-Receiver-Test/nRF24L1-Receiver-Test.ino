@@ -15,7 +15,7 @@
 #define CSN_PIN  8
 
 //default pin settings
-//#define CE_PIN   19
+//#define CE_PIN   9
 //#define CSN_PIN  10
 
 // Create an RF24 object
